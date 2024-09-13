@@ -2,6 +2,8 @@ package com.ShoppersStack_testScripts;
 
 import java.io.IOException;
 
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 import com.ShoppersStack.GenericUtility.Base_Test;
@@ -24,6 +26,7 @@ public class TC_002_Verify_user_is_able_to_delete_address_or_not_Test extends Ba
 		myAddressPage.getDeleteButton().click();
 		Thread.sleep(2000);
 		myAddressPage.getYesButton().click();
+		wait.until(ExpectedConditions.alertIsPresent());
 		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
 		Thread.sleep(2000);
